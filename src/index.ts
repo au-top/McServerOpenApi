@@ -5,7 +5,13 @@ const appDirPath = __dirname;
 
 const pluginDirFileList = fs.readdirSync(`${appDirPath}/plugin`);
 const port=25503;
-const gameServicPath=path.resolve(__dirname,'..');
+
+const config=JSON.parse( fs.readFileSync(path.resolve(__dirname,"./config.json")).toString() ) as config;
+
+
+
+
+
 const readJsModuleFile = pluginDirFileList
     .map((v) => `${appDirPath}/plugin/${v}`)
     .filter((v) => {
@@ -20,7 +26,7 @@ const readJsModuleFile = pluginDirFileList
             return (async (v) => {
                 const loadPlugin = await import(v);
                 if (Object.prototype.hasOwnProperty.call(loadPlugin, "setup")) {
-                    loadPlugin["setup"](app,gameServicPath);
+                    loadPlugin["setup"](app,config["mcServerPath"]);
                     return {
                         'pluginPath':v,
                         'loadState':'success'

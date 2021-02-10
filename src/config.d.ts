@@ -1,0 +1,3 @@
+interface config{
+    mcServerPath:string
+}
