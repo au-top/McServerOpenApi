@@ -10,8 +10,6 @@ const config=JSON.parse( fs.readFileSync(path.resolve(__dirname,"./config.json")
 
 
 
-
-
 const readJsModuleFile = pluginDirFileList
     .map((v) => `${appDirPath}/plugin/${v}`)
     .filter((v) => {
