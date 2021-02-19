@@ -36,7 +36,7 @@ async function modInfo(
                     }
                 })
                 .map((v) => {
-                    return { filename: path.parse(v).name, length: fs.statSync(v).size };
+                    return { filename: path.parse(v).base, length: fs.statSync(v).size };
                 })
         );
     }
@@ -54,7 +54,8 @@ async function modInfo(
                 .map((v) => path.join(clientModsPath, v))
                 .filter((v) => testIsFile(v))
                 .map((v) => {
-                    return { filename: path.parse(v).name, length: fs.statSync(v).size };
+
+                    return { filename: path.parse(v).base, length: fs.statSync(v).size };
                 })
         );
     }
