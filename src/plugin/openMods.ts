@@ -94,3 +94,26 @@ function setup(app: Express, gameServicPath: string) {
 }
 
 export { setup };
+/**
+ * url
+ * GET
+ * {{host}}/modInfo 
+ * 
+ * [
+    {
+        "filename": "AttributeFix-1.16.5-10.1.2.jar",
+        "length": 9554
+    },
+    {
+        "filename": "BackTools-1.16.5-10.1.0.jar",
+        "length": 23874
+    }
+   ]
+ * 
+ * download mod file
+ * GET
+ * {{host}}/modSource
+ * [buffer]
+ * 
+ * 
+ */
