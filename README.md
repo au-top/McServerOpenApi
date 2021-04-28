@@ -1,4 +1,4 @@
-#McServerOpenApi
+# McServerOpenApi
 
 可以在 plugin 中自定义插件 参考 OpenMods 代码用作示例
 自带 OpenMods 插件用于向下同步 mods
